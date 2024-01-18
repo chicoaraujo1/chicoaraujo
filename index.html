@@ -31,15 +31,24 @@
             </div>
         </div>
         <div class="image-container" id="imageContainer">
-            <div class="image-text" id="imageText">Your Text Here</div>
+            <div class="image-text" id="imageText"></div>
         </div>       
     </div>
     <script>
         const images = [
-            { url: "assets/Goldfinch-1.png", text: "" },
             { url: "assets/Amazon-1.png", text: "" },
-            { url: "assets/Better-1.png", text: "" }
+            { url: "assets/Better-1.png", text: "" },
+            { url: "assets/Goldfinch-2.png", text: "" },
+            { url: "assets/Amazon-2.png", text: "" },
+            { url: "assets/Better-2.png", text: "" },
         ];
+    
+        // Preload images
+        images.forEach(image => {
+            const img = new Image();
+            img.src = image.url;
+        });
+    
         let currentImageIndex = 0;
     
         function changeImage() {
@@ -48,13 +57,17 @@
             
             container.style.backgroundImage = `url('${images[currentImageIndex].url}')`;
             textElement.textContent = images[currentImageIndex].text;
-    
+        
             currentImageIndex = (currentImageIndex + 1) % images.length;
         }
-    
-        setInterval(changeImage, 2000); // Change image and text every 3000 milliseconds (3 seconds)
+        
+        setInterval(changeImage, 2000); // Change image and text every 2000 milliseconds (2 seconds)
         changeImage(); // Initial call to set the first image and text
     </script>
+    
+    
+    </body>
+    </html>
     
 </body>
 </html>

@@ -32,6 +32,10 @@ body, html {
     padding: 0;
 }
 
+.work-experience ul li:first-child {
+    color: #7C7C7C;
+}
+
 .work-experience li {
     display: flex;
     justify-content: space-between;
@@ -53,12 +57,11 @@ body, html {
 .image-text {
     position: absolute;
     top: 0;
-    left: calc(100% / 25 * 2); /* Left padding aligned with the sidebar (1 column) */
-    right: calc(100% / 25 * 2); /* Right padding also aligned with 1 column */
-    padding: 50px 0; /* Top and bottom padding */
+    left: calc(100% / 25 * 2); /* Left padding aligned with the sidebar */
+    right: 0;
+    padding: 50px; /* Same top and bottom padding as the sidebar */
     color: #fff; /* Adjust text color as needed */
-    font-size: 16px; /* Set font size */
-    font-weight: 300; /* Set font weight */
+    font-size: 20px; /* Adjust font size as needed */
     /* Additional text styles as needed */
 }
 
@@ -85,19 +88,31 @@ body, html {
         grid-template-columns: 1fr;
     }
 
-    .sidebar, .video-container, .footer-links-container {
+    .sidebar, .image-container, .footer-links-container {
         grid-column: 1;
         padding: 20px;
     }
 
-    .logo, .description, .work-experience {
-        margin-bottom: 20px;
+    .image-container {
+        display: none; /* Hide images on mobile */
+    }
+
+    .description {
+        margin-bottom: 80px; /* Increased from 60px to 80px */
     }
 
     .footer-links-container {
         position: fixed;
-        bottom: 20px; /* Adjusted for mobile */
-        left: 20px; /* Consistent with the sidebar padding in mobile view */
-        width: calc(100% - 40px); /* Adjusting width for mobile */
+        bottom: 20px;
+        left: 0px; /* Align with the description and work experience */
+        width: calc(100% - 40px); /* Adjust width for mobile */
+    }
+
+    .footer-links a {
+        /* Keep the styles for footer links as they are */
+    }
+
+    .logo, .description, .work-experience {
+        margin-bottom: 50px;
     }
 }
