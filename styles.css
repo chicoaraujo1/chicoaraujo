@@ -1,0 +1,103 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+}
+
+.sidebar {
+    grid-column: 2 / span 8;
+    padding: 50px 0;
+}
+
+.logo {
+    height: 16px;
+    margin-bottom: 40px;
+}
+
+.description, .work-experience {
+    margin-bottom: 60px;
+    line-height: 160%;
+}
+
+.work-experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.work-experience li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.work-experience span {
+    font-size: 16px;
+}
+
+.image-container {
+    grid-column: 11 / -1;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative; /* Needed for absolute positioning of child elements */
+}
+
+.image-text {
+    position: absolute;
+    top: 0;
+    left: calc(100% / 25 * 2); /* Left padding aligned with the sidebar (1 column) */
+    right: calc(100% / 25 * 2); /* Right padding also aligned with 1 column */
+    padding: 50px 0; /* Top and bottom padding */
+    color: #fff; /* Adjust text color as needed */
+    font-size: 16px; /* Set font size */
+    font-weight: 300; /* Set font weight */
+    /* Additional text styles as needed */
+}
+
+
+.footer-links-container {
+    position: fixed;
+    bottom: 50px;
+    left: calc(100% / 25); /* Left padding aligned with the sidebar (1 column) */
+    width: calc(100% - (100% / 25)); /* Adjusting width to maintain the padding */
+    box-sizing: border-box;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000;
+    display: inline-block; /* Display links side by side */
+    margin-right: 16px; /* 16px spacing between the links */
+    margin-bottom: 0; /* Remove bottom margin if not needed */
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar, .video-container, .footer-links-container {
+        grid-column: 1;
+        padding: 20px;
+    }
+
+    .logo, .description, .work-experience {
+        margin-bottom: 20px;
+    }
+
+    .footer-links-container {
+        position: fixed;
+        bottom: 20px; /* Adjusted for mobile */
+        left: 20px; /* Consistent with the sidebar padding in mobile view */
+        width: calc(100% - 40px); /* Adjusting width for mobile */
+    }
+}

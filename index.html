@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chico Araujo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/ChicoLogo.png" alt="Chico Logo" class="logo">
+            <p class="description">Brazilian designer from Rio de Janeiro, currently working at Warbler Labs and experimenting AI across multiple disciplines.</p>
+            <div class="work-experience">
+                <ul>
+                    <li>Work experience</li>
+                    <li>Warbler Labs <span>'22 - Present</span></li>
+                    <li>Better.com <span>'21 - '22</span></li>
+                    <li>Work & Co <span>'17 - '21</span></li>
+                    <li>Huge <span>'14 - '17</span></li>
+                    <li>Globo.com <span>'12 - '14</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-links-container">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/araujochico/" class="link">Linkedin</a>
+                <a href="mailto:chicoaraujo1@gmail.com" class="link">Email</a>
+            </div>
+        </div>
+        <div class="image-container" id="imageContainer">
+            <div class="image-text" id="imageText">Your Text Here</div>
+        </div>       
+    </div>
+    <script>
+        const images = [
+            { url: "assets/Goldfinch-1.png", text: "" },
+            { url: "assets/Amazon-1.png", text: "" },
+            { url: "assets/Better-1.png", text: "" }
+        ];
+        let currentImageIndex = 0;
+    
+        function changeImage() {
+            const container = document.getElementById('imageContainer');
+            const textElement = document.getElementById('imageText');
+            
+            container.style.backgroundImage = `url('${images[currentImageIndex].url}')`;
+            textElement.textContent = images[currentImageIndex].text;
+    
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+    
+        setInterval(changeImage, 2000); // Change image and text every 3000 milliseconds (3 seconds)
+        changeImage(); // Initial call to set the first image and text
+    </script>
+    
+</body>
+</html>
