@@ -132,7 +132,6 @@ h2 {
 .projectimage img {
     width: 100%;
     grid-column: 1 / span 21;
-    height: auto;
     display: block;
     padding-bottom: 2rem;
 }
@@ -212,6 +211,11 @@ a:hover {
         padding-right: 1rem;
     }
         
+    .project img {
+        aspect-ratio: 7 / 8; /* This will make the image taller, change the ratio as needed */
+        object-fit: cover; /* This will cover the area of the element with the video */
+        height: auto; /* Height will be determined by the aspect-ratio and width */
+    }
 
     .projectname {
         grid-column: 1 / -1;
@@ -228,7 +232,6 @@ a:hover {
         padding-top: 2rem;
         padding-left: 0;
         width: auto;
-
     }
 
     /* Project info list adjustment */
