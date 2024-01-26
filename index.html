@@ -5,78 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chico Araujo</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F0GND9WZHY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F0GND9WZHY');
-</script>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <img src="assets/ChicoLogo.png" alt="Chico Logo" class="logo">
-            <p class="description">Brazilian designer from Rio de Janeiro, currently working at Warbler Labs and experimenting AI across multiple disciplines.</p>
-            <div class="work-experience">
+        <div class="logo">
+            <!-- Your logo here -->
+            <a href="http://www.chicoaraujo.com">
+            <img src="assets/ChicoLogo.png" alt="Logo" style="height: 16px;">
+            </a>
+        </div>
+        <div class="about">
+            <h2>About</h2>
+            <p>Brazilian designer from Rio de Janeiro currently working at Warbler Labs and experimenting AI across multiple disciplines.</p>
+            <a href="mailto:chicoaraujo1@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/araujochico/">LinkedIn</a>
+            <a href="https://read.cv/chicoaraujo" target="_blank">Read.cv</a>
+        </div>
+        <section class="work-experience">
+            <h2>Work experience</h2>
+            <ul>
+                <li>Warbler Labs <span>'22 - Present</span></li>
+                <li>Better.com <span>'21 - '22</span></li>
+                <li>Work & Co <span>'17 - '21</span></li>
+                <li>Huge <span>'14 - '17</span></li>
+                <li>Globo.com <span>'12 - '14</span></li>
+            </ul>
+        </section>
+        <!-- Projects Section -->
+        <!-- Repeat this block for each project -->
+        <div class="project">
+            <a href="http://www.chicoaraujo.com/heronfinance.html">
+            <img src="assets/Heron-1.png" alt="Project Image">
+            </a>
+            <div class="project-info">
                 <ul>
-                    <li>Work experience</li>
-                    <li>Warbler Labs <span>'22 - Present</span></li>
-                    <li>Better.com <span>'21 - '22</span></li>
-                    <li>Work & Co <span>'17 - '21</span></li>
-                    <li>Huge <span>'14 - '17</span></li>
-                    <li>Globo.com <span>'12 - '14</span></li>
+                    <li>Heron Finance<span> Senior Designer, 2023-24</span></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-links-container">
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/araujochico/" class="link">Linkedin</a>
-                <a href="mailto:chicoaraujo1@gmail.com" class="link">Email</a>
+        <div class="project">
+            <a href="http://www.chicoaraujo.com/better.html">
+            <img src="assets/Better-1.png" alt="Project Image">
+            </a>
+            <div class="project-info">
+                <ul>
+                    <li>Better.com<span>Senior Designer, 2022</span></li>
+                </ul>
             </div>
         </div>
-        <div class="image-container" id="imageContainer">
-            <div class="image-text" id="imageText"></div>
-        </div>       
+        <div class="project">
+            <a href="http://www.chicoaraujo.com/amazon.html">
+            <img src="assets/Amazon-1.png" alt="Project Image">
+            </a>
+            <div class="project-info">
+                <ul>
+                    <li>Amazon<span>Senior Designer, 2021</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li>© CHICOARAUJO 2024</li>
+                <li>Made with love.</li>
+            </ul>
+        </div>
+        <!-- End of Project Block -->
     </div>
-    <script>
-        const images = [
-            { url: "assets/Amazon-1.png", text: "" },
-            { url: "assets/Better-1.png", text: "" },
-            { url: "assets/Goldfinch-2.png", text: "" },
-            { url: "assets/Amazon-2.png", text: "" },
-            { url: "assets/Better-2.png", text: "" },
-        ];
-    
-        // Preload images
-        images.forEach(image => {
-            const img = new Image();
-            img.src = image.url;
-        });
-    
-        let currentImageIndex = 0;
-    
-        function changeImage() {
-            const container = document.getElementById('imageContainer');
-            const textElement = document.getElementById('imageText');
-            
-            container.style.backgroundImage = `url('${images[currentImageIndex].url}')`;
-            textElement.textContent = images[currentImageIndex].text;
-        
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }
-        
-        setInterval(changeImage, 2000); // Change image and text every 2000 milliseconds (2 seconds)
-        changeImage(); // Initial call to set the first image and text
-    </script>
-    
-    
-    </body>
-    </html>
-    
 </body>
 </html>

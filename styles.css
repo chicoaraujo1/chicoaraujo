@@ -1,118 +1,253 @@
-body, html {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    background: #fff;
+    color: #333;
     font-weight: 300;
-    color: #000;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    padding-bottom: 1rem;
 }
 
 .container {
+    font-size: 16px;
     display: grid;
-    grid-template-columns: repeat(25, 1fr);
+    grid-template-columns: repeat(22, 1fr);
+    width: 100%;
+    max-width: 100%;
+    padding-top: 6rem;
 }
 
-.sidebar {
-    grid-column: 2 / span 8;
-    padding: 50px 0;
+.container-content {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(22, 1fr);
+    width: 100%;
+    max-width: 100%;
+    padding-top: 6rem;
 }
 
 .logo {
-    height: 16px;
-    margin-bottom: 40px;
+    grid-column: 2 / span 6;
+    height: 20px;
+    display: flex;
+    align-items: top;
 }
 
-.description, .work-experience {
-    margin-bottom: 60px;
-    line-height: 160%;
+.about {
+    grid-column: 9 / span 6;
+}
+
+.work-experience {
+    grid-column: 16 / span 6;
 }
 
 .work-experience ul {
     list-style: none;
     padding: 0;
-}
-
-.work-experience ul li:first-child {
-    color: #7C7C7C;
+    text-align: left; /* Align the work experience to the left */
 }
 
 .work-experience li {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 12px;
 }
 
-.work-experience span {
-    font-size: 16px;
+.work-experience li span {
+    float: right; /* Align dates to the right */
 }
 
-.image-container {
-    grid-column: 11 / -1;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative; /* Needed for absolute positioning of child elements */
+.project {
+    grid-column: 2 / span 20;
+    
 }
 
-.image-text {
-    position: absolute;
-    top: 0;
-    left: calc(100% / 25 * 2); /* Left padding aligned with the sidebar */
-    right: 0;
-    padding: 50px; /* Same top and bottom padding as the sidebar */
-    color: #fff; /* Adjust text color as needed */
-    font-size: 20px; /* Adjust font size as needed */
-    /* Additional text styles as needed */
+.project img {
+    width: 100%;
+    grid-column: 1 / span 21;
+    height: auto;
+    display: block;
+    margin-top: 3rem;
+}
+
+.project-info ul {
+    list-style: none;
+    text-align: left; /* Align the work experience to the left */
+    padding-top: 0rem;
+}
+
+.project-info li span {
+    float: right; /* Align dates to the right */
+}
+
+.projectimage video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.footer {
+    padding-bottom: 4rem;
+    grid-column: 2 / span 20;
+    padding-top: 8rem;
+    font-size: 12px;
+    font-weight: 500;
+    color: #a4a4a4;
+}
+
+.footer ul {
+    list-style: none;
+    text-align: right;
+}
+
+.projectname {
+    grid-column: 2 / span 10;
+    align-items: top;
+}
+
+.projectabout {
+    grid-column: 12 / span 10;
+    align-items: top;
+}
+
+.projectimage {
+    grid-column: 2 / span 20;
+    padding-top: 4rem;
+}
+
+.projectimage img {
+    width: 100%;
+    grid-column: 1 / span 21;
+    height: auto;
+    display: block;
+    padding-bottom: 2rem;
 }
 
 
-.footer-links-container {
-    position: fixed;
-    bottom: 50px;
-    left: calc(100% / 25); /* Left padding aligned with the sidebar (1 column) */
-    width: calc(100% - (100% / 25)); /* Adjusting width to maintain the padding */
-    box-sizing: border-box;
+p {
+    padding-bottom: 1rem;
 }
 
-.footer-links a {
+h3 {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+a {
     text-decoration: none;
     color: #000;
-    display: inline-block; /* Display links side by side */
-    margin-right: 16px; /* 16px spacing between the links */
-    margin-bottom: 0; /* Remove bottom margin if not needed */
+    padding-right: 1rem;
 }
 
+a:hover {
+    text-decoration: none;
+}
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+    /* Use a single-column layout for mobile devices */
     .container {
-        grid-template-columns: 1fr;
+        display: grid;
+        padding-top: 2rem; /* Reduced padding */
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 
-    .sidebar, .image-container, .footer-links-container {
+    .container-content {
+        display: grid
+    }
+    
+
+    .about {
+        padding-top: 2rem;
+    }
+
+    .work-experience {
+        padding-top: 2rem;
+        
+    }
+
+    /* Stack logo, about, work experience, and projects vertically */
+    .logo, .about, .work-experience, .project, .footer {
+        grid-column: 1 / -1; /* Full width */
+        font-size: 14px
+    }
+
+    /* Adjust the logo size for smaller screens if necessary */
+    .logo img {
+        height: auto; /* Adjust height to maintain aspect ratio */
+        width: auto; /* Example: set to 50% of the container width */
+        margin: 0 auto; /* Center the logo */
         grid-column: 1;
-        padding: 20px;
     }
 
-    .image-container {
-        display: none; /* Hide images on mobile */
+    .logo {
+        grid-column: 1;
     }
 
-    .description {
-        margin-bottom: 80px; /* Increased from 60px to 80px */
+    /* Adjust font sizes for smaller screens if necessary */
+    h2, p, a, .work-experience li, .footer {
+        font-size: 14px; /* Smaller font size */
+    }
+    
+    h3 {
+        font-size: 20px;
     }
 
-    .footer-links-container {
-        position: fixed;
-        bottom: 20px;
-        left: 0px; /* Align with the description and work experience */
-        width: calc(100% - 40px); /* Adjust width for mobile */
+    .container-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+        
+
+    .projectname {
+        grid-column: 1 / -1;
     }
 
-    .footer-links a {
-        /* Keep the styles for footer links as they are */
+    .projectabout {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+            
     }
 
-    .logo, .description, .work-experience {
-        margin-bottom: 50px;
+    .projectimage {
+        grid-column: 1 / -1;
+        padding-top: 2rem;
+        padding-left: 0;
+        width: auto;
+
+    }
+
+    /* Project info list adjustment */
+    .project-info ul,
+    .project-info li {
+        padding-top: 0rem; /* Remove padding */
+        margin: 0; /* Remove margin */
+        list-style-type: none; /* Remove bullet points */
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding-top: 2rem; /* Less padding on top */
+        font-size: 10px; /* Smaller font size */
+    }
+
+    /* Make sure the footer text is centered for better readability on mobile */
+    .footer ul {
+        text-align: center;
+        padding: 0;
     }
 }
