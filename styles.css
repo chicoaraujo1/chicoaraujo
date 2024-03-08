@@ -115,12 +115,17 @@ h2 {
 }
 
 .projectname {
-    grid-column: 2 / span 10;
+    grid-column: 2 / span 6;
     align-items: top;
 }
 
 .projectabout {
-    grid-column: 12 / span 10;
+    grid-column: 9 / span 6;
+    align-items: top;
+}
+
+.projectyear {
+    grid-column: 16 / span 6;
     align-items: top;
 }
 
