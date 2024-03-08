@@ -85,7 +85,7 @@ h2 {
 .project-info ul {
     list-style: none;
     text-align: left; /* Align the work experience to the left */
-    padding-top: 0rem;
+    padding-top: 1rem;
 }
 
 .project-info li span {
