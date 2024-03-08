@@ -238,8 +238,13 @@ a:hover {
 
     .projectabout {
         grid-column: 1 / -1;
+        margin-top: 2rem;
+    }
+
+    .projectyear {
+        grid-column: 1 / -1;
+        align-items: top;
         margin-top: 1rem;
-            
     }
 
     .projectimage {
