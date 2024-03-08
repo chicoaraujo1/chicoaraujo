@@ -257,7 +257,7 @@ a:hover {
     /* Project info list adjustment */
     .project-info ul,
     .project-info li {
-        padding-top: 0rem; /* Remove padding */
+        padding-top: 0.5rem; /* Remove padding */
         margin: 0; /* Remove margin */
         list-style-type: none; /* Remove bullet points */
     }
